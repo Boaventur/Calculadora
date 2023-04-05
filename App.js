@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
 
 export default function App() {
   // Mapeamento de teclas
-  const buttons = ['LIMPAR', 'DEL', '%', '/', "x", 9, 8, 7, 6, 5, 4, 3, 2, 1, , 0,"-", "+", '.', '+/-', '=']
+  const buttons = ['LIMPAR', 'DEL', '%', '/', 9, 8, 7, "x", 6, 5, 4, "-", 1, 2, 3,"+", 0,'.', '+/-', '=']
 
   const [currentNumber, setCurrentNumber] = useState("")
   const [lastNumber, setLastNumber] = useState("")
@@ -74,7 +74,7 @@ export default function App() {
         {buttons.map((button) => 
           button === '=' ? // Mapeamento do botão =
         <TouchableOpacity onPress={() => handleInput(button)} key={button} style={[styles.button, {backgroundColor: '#3dd0e3'}]}>
-          <Text style={[styles.textButton, {color: "white", fontSize: 30}]}>{button}</Text>
+          <Text style={[styles.textButton, {color: "white", fontSize: 50}]}>{button}</Text>
         </TouchableOpacity>
           : // Mapeamento dos outros botões
           <TouchableOpacity onPress={() => handleInput(button)} key={button} style={styles.button}>
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
-    minWidth: 90, 
+    minWidth: 100, 
     minHeight: 90,
     flex: 2,
   },
